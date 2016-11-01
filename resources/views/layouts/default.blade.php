@@ -60,20 +60,20 @@
 
                     <div class="clearfix"></div>
 
-                    <div class="help-box">
-                        <h5 class="text-muted m-t-0">Need help?</h5>
-                        <p>
-                            <span class="text-custom">Email:</span><br />
-                            support@microbiota.cn
+                    {{--<div class="help-box">--}}
+                        {{--<h5 class="text-muted m-t-0">Need help?</h5>--}}
+                        {{--<p>--}}
+                            {{--<span class="text-custom">Email:</span><br />--}}
+                            {{--support@microbiota.cn--}}
 
-                        </p>
+                        {{--</p>--}}
 
-                        <p class="m-b-0">
-                            <span class="text-custom">Call:</span>
-                            <br />
-                            123123123123
-                        </p>
-                    </div>
+                        {{--<p class="m-b-0">--}}
+                            {{--<span class="text-custom">Call:</span>--}}
+                            {{--<br />--}}
+                            {{--123123123123--}}
+                        {{--</p>--}}
+                    {{--</div>--}}
                 </div>
             </div>
 
@@ -122,10 +122,10 @@
 
        @yield('scripts')
 
-        <!-- Dashboard init -->
-        <script src="/pages/jquery.dashboard.js"></script>
 
         <!-- App js -->
         <script src="/js/jquery.core.js"></script>
         <script src="/js/jquery.app.js"></script>
+
+    @stack('js')
     </body>

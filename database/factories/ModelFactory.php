@@ -21,3 +21,26 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Models\Batch::class, function (Faker\Generator $faker) {
+
+    return [
+        'ori_num' => str_random(5),
+        'py_num' => str_random(5),
+        'samples_type' => $faker->numberBetween(1, 3),
+        'samples_amount' => $faker->numberBetween(1, 3),
+        'trans_method'=> $faker->numberBetween(1, 3),
+        'arrive_time' => \Carbon\Carbon::now(),
+        'arrive_status' => $faker->numberBetween(1, 3),
+        'store_method' => $faker->numberBetween(1, 3),
+        'store_location' => $faker->sentence,
+        'sender' => $faker->name,
+        'sender_contact' => $faker->phoneNumber,
+        'send_time' => \Carbon\Carbon::now(),
+        'recipients' => $faker->name,
+        'express_num' => str_random(10),
+        'note' => $faker->sentence,
+        'manager' => $faker->numberBetween(1, 20)
+    ];
+});
+

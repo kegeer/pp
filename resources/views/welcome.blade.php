@@ -74,7 +74,7 @@
     @endif
         <div class="content">
             <div class="title m-b-md">
-                Laravel
+                This is for mb
             </div>
         </div>
 </div>

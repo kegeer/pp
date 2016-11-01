@@ -17,9 +17,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('/users', function () {
-    return App\User::all();
-});
 Route::get('/reports', 'Api\Report\ReportController@index');
 Route::post('/report', 'Api\Report\ReportController@store');
 Route::post('/report/meta', 'Api\Report\ReportController@storeMeta');

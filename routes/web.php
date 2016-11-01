@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/batches', 'BatchController@index');
+
+Route::resource('batches', 'BatchController');
