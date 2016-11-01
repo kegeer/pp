@@ -20,10 +20,10 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->string('gender');
             $table->string('age');
-            $table->timestamp('sample_date');
-            $table->timestamp('test_date');
+            $table->timestamp('sample_date')->nullable();
+            $table->timestamp('test_date')->nullable();
             $table->boolean('is_reported');
-            $table->timestamp('report_date');
+            $table->timestamp('report_date')->nullable();
             $table->timestamps();
         });
     }
