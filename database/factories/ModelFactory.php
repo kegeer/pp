@@ -44,3 +44,15 @@ $factory->define(App\Models\Batch::class, function (Faker\Generator $faker) {
     ];
 });
 
+
+$factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
+
+    return [
+        'id' => $faker->uuid(),
+        'name' => $faker->name,
+        'start' =>\Carbon\Carbon::now(),
+        'end' => \Carbon\Carbon::now(),
+        'manager_user_id' => $faker->numberBetween(1, 3),
+    ];
+});
+

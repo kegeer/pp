@@ -1,13 +1,7 @@
 @extends('layouts.default')
 
-@section('styles')
-	<!-- Tablesaw css -->
-	<link href="/plugins/tablesaw/css/tablesaw.css" rel="stylesheet" type="text/css" />
-@stop
 
 @section('content')
-
-	<div class="container">
 
 		<div class="row">
 			<div class="col-xs-12">
@@ -63,32 +57,25 @@
 								<td>{{ $batch->trans_method }}</td>
 								<td>{{ $batch->store_method }}</td>
 								<td>{{ $batch->manager }}</td>
-								<th scope="col">
-									<a href="{{ route('batches.samples', $batch->id) }}"><button class="btn btn-sm btn-primary">Samples <i class="mdi mdi-pen"></i></button></a>
-								</th>
-								<th scope="col">
+								<td scope="col">
+									<a href="{{ route('samples.index', $batch->id) }}"><button class="btn btn-sm btn-primary">Samples <i class="mdi mdi-pen"></i></button></a>
+								</td>
+								<td scope="col">
 									<a href="{{ route('batches.edit', $batch->id) }}"><button class="btn btn-sm btn-default">Edit <i class="mdi mdi-pen"></i></button></a>
-								</th>
-								<th scope="col">
+								</td>
+								<td scope="col">
 									<a href="{{ route('batches.destroy', $batch->id) }}"><button class="btn btn-sm btn-danger">Delete <i class="mdi mdi-delete"></i></button></a>
-								</th>
+								</td>
 							</tr>
 								@endforeach
 
 							</tbody>
 						</table>
 
-							{{ $batches->render() }}
+							{{ $batches->links() }}
 					</div>
 			</div>
 		</div>
-	</div>
 
 @stop
 
-@section('scripts')
-	<!-- Tablesaw js -->
-		<script src="/plugins/tablesaw/js/tablesaw.js"></script>
-		<script src="/plugins/tablesaw/js/tablesaw-init.js"></script>
-
-@stop

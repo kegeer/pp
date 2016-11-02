@@ -27,13 +27,4 @@ class BatchRepo implements BatchRepoInterface
         return $batch->save();
     }
 
-    public function getSamples($id)
-    {
-        return Sample::where('batch_id', $id)->paginate(10);;
-    }
-
-    public function addSample($id)
-    {
-
-    }
 }

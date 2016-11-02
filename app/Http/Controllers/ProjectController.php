@@ -5,21 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use Route;
-use App\Repos\Batches\SampleRepoInterface;
+use App\Models\Project;
 
-class SampleController extends Controller
+
+class ProjectController extends Controller
 {
-
-    protected $repo;
-
-    protected $batch;
-
-    public function __construct(SampleRepoInterface $repo)
-    {
-        $this->repo = $repo;
-        $batch = Route::current()->parameters()['batch'];
-    }
     /**
      * Display a listing of the resource.
      *
@@ -27,9 +17,8 @@ class SampleController extends Controller
      */
     public function index()
     {
-        $batch = $this->batch;
-        $samples = $this->repo->all($batch);
-        return view('batches.samples.index', compact('samples', 'batch'));
+        $projects = Project::paginate(10);
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -37,10 +26,10 @@ class SampleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Sample $sample)
+    public function create(Project $project)
     {
-        return view('batches.samples.form', compact($sample));
-    }
+        return view('projects.form', compact('project'));  
+    }   
 
     /**
      * Store a newly created resource in storage.

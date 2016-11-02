@@ -3,6 +3,6 @@ namespace App\Repos\Batches;
 
 interface SampleRepoInterface
 {
-    public function all();
+    public function all($batch);
 
 }

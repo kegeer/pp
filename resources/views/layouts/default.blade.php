@@ -12,6 +12,8 @@
         <title>Control System</title>
             
         @yield('styles')
+        <!-- Tablesaw css -->
+    <link href="/plugins/tablesaw/css/tablesaw.css" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
         <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -119,7 +121,9 @@
         <script src="/js/jquery.slimscroll.js"></script>
         <script src="/js/jquery.scrollTo.min.js"></script>
         <script src="/plugins/switchery/switchery.min.js"></script>
-
+<!-- Tablesaw js -->
+        <script src="/plugins/tablesaw/js/tablesaw.js"></script>
+        <script src="/plugins/tablesaw/js/tablesaw-init.js"></script>
        @yield('scripts')
 
 

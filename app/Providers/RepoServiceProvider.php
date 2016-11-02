@@ -25,5 +25,6 @@ class RepoServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\Repos\Reports\ReportRepoInterface', 'App\Repos\Reports\ReportRepo');
         $this->app->bind('App\Repos\Batches\BatchRepoInterface', 'App\Repos\Batches\BatchRepo');
+        $this->app->bind('App\Repos\Batches\SampleRepoInterface', 'App\Repos\Batches\SampleRepo');
     }
 }

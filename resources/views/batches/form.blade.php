@@ -1,6 +1,6 @@
 {!! Form::model($batch, [
-    'route' => $batch->exists() ?['batches.store']:['batches.update', $batch->id],
-    'method' => $batch->exists() ? 'post' : 'put',
+    'route' => $batch->exists() ?['batches.update', $batch->id]:['batches.store'],
+    'method' => $batch->exists() ? 'put':'post',
     'class' => 'form-horizontal'
     ]) !!}
 
@@ -281,7 +281,7 @@
 
 <div class="col-md-4 col-md-offset-4">
 
-    {!! Form::submit($batch->exists() ?'Store':'Update' , ['class' => 'btn btn-default']) !!}
+    {!! Form::submit($batch->exists() ?'Update':'Store', ['class' => 'btn btn-default']) !!}
 </div>
 
 

@@ -30,13 +30,7 @@ class BatchController extends Controller
         return view('batches.create', compact('batch'));
     }
 
-    public function samples($id)
-    {
-        $samples = $this->repo->getSamples($id);
-//        dd($samples);
-        return view('batches.samples.index', compact('samples'));
 
-    }
 
     public function store(Request $request)
     {
