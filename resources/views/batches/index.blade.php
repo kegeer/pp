@@ -31,7 +31,7 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="m-b-30">
-									<a href="{{ route('batches.create') }}"></a><button class="btn btn-success waves-effect waves-light">New Batch<i class="mdi mdi-plus-circle-outline"></i></button>
+									<a href="{{ route('batches.create') }}"><button class="btn btn-success waves-effect waves-light">New Batch<i class="mdi mdi-plus-circle-outline"></i></button></a>
 								</div>
 							</div>
 						</div>
@@ -49,6 +49,10 @@
 								<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="2">Year</th>
 								<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="1">Rating</th>
 								<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="4">Gross</th>
+								<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Samples</th>
+								<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Edit</th>
+								<th scope="col" data-tablesaw-sortable-col data-tablesaw-priority="persist">Delete</th>
+
 							</tr>
 							</thead>
 							<tbody>
@@ -59,6 +63,15 @@
 								<td>{{ $batch->trans_method }}</td>
 								<td>{{ $batch->store_method }}</td>
 								<td>{{ $batch->manager }}</td>
+								<th scope="col">
+									<a href="{{ route('batches.samples', $batch->id) }}"><button class="btn btn-sm btn-primary">Samples <i class="mdi mdi-pen"></i></button></a>
+								</th>
+								<th scope="col">
+									<a href="{{ route('batches.edit', $batch->id) }}"><button class="btn btn-sm btn-default">Edit <i class="mdi mdi-pen"></i></button></a>
+								</th>
+								<th scope="col">
+									<a href="{{ route('batches.destroy', $batch->id) }}"><button class="btn btn-sm btn-danger">Delete <i class="mdi mdi-delete"></i></button></a>
+								</th>
 							</tr>
 								@endforeach
 

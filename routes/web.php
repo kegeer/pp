@@ -20,4 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
+
+Route::get('/batches/{id}/samples', ['uses' => 'BatchController@samples', 'as' => 'batches.samples']);
 Route::resource('batches', 'BatchController');
+// Route::resource('/batches/{id}/samples', 'SampleController');

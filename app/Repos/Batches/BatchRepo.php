@@ -3,6 +3,8 @@
 namespace App\Repos\Batches;
 
 use App\Models\Batch;
+use App\Models\Sample;
+use Carbon\Carbon;
 
 class BatchRepo implements BatchRepoInterface
 {
@@ -16,14 +18,18 @@ class BatchRepo implements BatchRepoInterface
         return Batch::paginate($pages);
     }
 
-    public function create()
+    public function create($data)
     {
-
+        $batch = new Batch();
+        $batch->fill(array_except($data, ['arrive_time', 'send_time']));
+        $batch['arrive_time'] = Carbon::parse($data['arrive_time']);
+        $batch['send_time'] = Carbon::parse($data['send_time']);
+        return $batch->save();
     }
 
     public function getSamples($id)
     {
-
+        return Sample::where('batch_id', $id)->paginate(10);;
     }
 
     public function addSample($id)

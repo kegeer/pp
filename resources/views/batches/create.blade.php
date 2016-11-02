@@ -54,8 +54,8 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
 
-        jQuery('#send_date').datepicker();
-        jQuery('#arrive_date').datepicker();
+        jQuery('#send_time').datepicker();
+        jQuery('#arrive_time').datepicker();
         
     });
 </script>
